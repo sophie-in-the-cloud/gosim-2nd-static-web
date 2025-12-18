@@ -9,4 +9,4 @@ permissions:
     pattern: "**"
     owner: ec2-user  # 또는 root
     group: ec2-user  # 또는 root
-    mode: 775        # 권한을 조금 더 넉넉히 줍니다
+    mode: 775        
