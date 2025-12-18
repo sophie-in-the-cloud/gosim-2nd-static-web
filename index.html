@@ -108,29 +108,32 @@
         }
 
         /* 폴라로이드 스타일 */
-        .polaroid-frame {
-            background: white;
-            padding: 15px 15px 40px 15px;
-            border: 1px solid #eaeaea;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transform: rotate(-2deg);
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            max-width: 450px;
-            margin: 0 auto;
-        }
+       .polaroid-frame {
+        background: white;
+        padding: 20px 20px 50px 20px; /* 여백도 살짝 키움 */
+        border: 1px solid #eaeaea;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        transform: rotate(-2deg);
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        
+        max-width: 600px;  /* ⭐ 기존 450px에서 600px로 확 키웠어요! */
+        margin: 0 auto;
+     }
         .polaroid-frame:hover {
             transform: translateY(-10px) rotate(0deg) scale(1.02); 
             box-shadow: 0 20px 40px rgba(255, 182, 193, 0.3);
             border-color: #FFB6C1;
         }
 
-        #randomImage {
-            width: 100%;
-            aspect-ratio: 4/3;     /* ⭐ 정사각형(1/1) 대신 약간 가로로 긴 비율로 변경 */
-            object-fit: contain;   /* 잘리지 않게 설정 */
-            border-radius: 4px;
-            background-color: #f0f0f0;
-        }
+       #randomImage {
+    width: 100%;       /* 프레임 가로에 꽉 맞춤 */
+    height: auto;      /* ⭐ 세로는 이미지 비율에 맞게 알아서 늘어남 */
+    aspect-ratio: auto; /* 고정 비율 해제 (짤이 안 잘림) */
+    object-fit: contain; 
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    min-height: 300px;
+}
         .polaroid-caption {
             text-align: center;
             margin-top: 20px;
