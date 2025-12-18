@@ -7,6 +7,6 @@ files:
 permissions:
   - object: /usr/share/nginx/html
     pattern: "**"
-    owner: ec2-user  # 또는 root
-    group: ec2-user  # 또는 root
-    mode: 775        
+    owner: nginx 
+    group: nginx  
+    mode: 755
