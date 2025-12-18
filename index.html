@@ -125,13 +125,12 @@
         }
 
         #randomImage {
-    width: 100%;
-    height: auto;          /* 높이를 자동으로 조절 */
-    max-height: 400px;     /* 너무 커지지 않게 최대 높이 제한 */
-    object-fit: contain;   /* ⭐ 이미지가 잘리지 않고 전체가 다 보이게 설정 */
-    border-radius: 4px;
-    background-color: #f0f0f0;
-}
+            width: 100%;
+            aspect-ratio: 4/3;     /* ⭐ 정사각형(1/1) 대신 약간 가로로 긴 비율로 변경 */
+            object-fit: contain;   /* 잘리지 않게 설정 */
+            border-radius: 4px;
+            background-color: #f0f0f0;
+        }
         .polaroid-caption {
             text-align: center;
             margin-top: 20px;
