@@ -2,12 +2,11 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /usr/share/nginx/html
+    destination: /tmp/deployment-archive # 1. 일단 임시 폴더에 압축을 풉니다.
 file_exists_behavior: OVERWRITE 
 
-permissions:
-  - object: /usr/share/nginx/html
-    pattern: "**"
-    owner: nginx 
-    group: nginx   
-    mode: 755
+hooks:
+  AfterInstall: # 2. 압축이 풀린 후 rsync 스크립트를 실행합니다.
+    - location: deploy.sh
+      timeout: 300
+      runas: root
